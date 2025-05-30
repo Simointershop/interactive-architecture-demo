@@ -1,0 +1,7 @@
+:root {
+  --color-core-border:    #e8155f;
+  --color-addon-border:   #4a5f7a;
+  --grid-gap:             20px;
+  --module-bg-active:   #e8155f;   /* bright pink */
+  --module-bg-inactive: #1f2937;   /* dark slate */
+}

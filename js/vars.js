@@ -1,5 +1,4 @@
 // js/vars.js
-
 export const labels = {
   pageTitle: "Intershop Interactive Architecture Demo",
   sidebars: {
@@ -16,7 +15,7 @@ export const labels = {
     "developer-tooling":            "Developer Tooling"
   },
   tooltips: {
-    info: "Click to toggle modules or pick providers"
+    info: "Click to learn more about this category"
   }
 };
 

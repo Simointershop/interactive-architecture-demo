@@ -1,4 +1,4 @@
-/* 1) Global page & typography */
+/* 1) Global */
 body {
   margin: 0;
   background: var(--color-bg-page);
@@ -8,10 +8,9 @@ body {
 .page-title {
   padding: var(--grid-gap);
   margin: 0;
-  color: var(--color-text-light);
 }
 
-/* 2) Layout grid: sidebar – center – sidebar */
+/* 2) Three-column layout */
 .layout-grid {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
@@ -24,13 +23,12 @@ body {
   gap: 12px;
 }
 
-/* 3) Center area & outer “backbone” wrapper */
+/* 3) Center & outer “backbone” wrapper */
 .center-area {
   display: flex;
   justify-content: center;
 }
 .core-wrapper {
-  position: relative;
   width: 100%;
   background: var(--color-bg-wrapper);
   border: 3px solid var(--color-border-core);
@@ -38,7 +36,7 @@ body {
   padding: var(--grid-gap);
 }
 
-/* 4) Inner categories grid */
+/* 4) Panels grid */
 .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -49,7 +47,7 @@ body {
   gap: var(--grid-gap);
 }
 
-/* 5) Panel styling with diagonal sheen */
+/* 5) Panel look + sheen */
 .category {
   position: relative;
   background: var(--color-bg-panel);
@@ -61,17 +59,13 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    var(--color-panel-sheen) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg, var(--color-panel-sheen) 0%, transparent 100%);
   mix-blend-mode: overlay;
 }
 .category.core  { border: 2px solid var(--color-border-core);  }
 .category.addon { border: 2px solid var(--color-border-addon); }
 
-/* Panel grid‐area assignments */
+/* Panel grid‐areas */
 .category.digital-commerce             { grid-area: digital-commerce; }
 .category.b2b-commerce                 { grid-area: b2b-commerce; }
 .category.experience-management        { grid-area: experience-management; }
@@ -90,24 +84,20 @@ body {
   margin-bottom: 12px;
 }
 .category > header h3 {
-  margin: 0;
-  color: var(--color-text-light);
-  font-weight: 600;
+  margin: 0; font-weight: 600;
 }
 .category > header .info {
-  font-size: 1.1rem;
-  color: var(--color-text-light);
-  cursor: default;
+  cursor: pointer;
 }
 
-/* 7) Modules grid inside panels */
+/* 7) Inner modules grid */
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 12px;
 }
 
-/* 8) Module cards */
+/* 8) Module cards on/off */
 .module-card {
   background: var(--color-module-active);
   color: var(--color-text-light);
@@ -130,45 +120,28 @@ body {
 .module-card.disabled img {
   filter: brightness(0.6) saturate(0);
 }
-.module-card h4 {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.2;
-}
+.module-card h4 { margin: 0; font-size: 0.95rem; line-height: 1.2; }
 
-/* 9) Modal styles */
+/* 9) Providers modal */
 .modal-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  position: fixed; inset: 0;
   background: rgba(0,0,0,0.4);
-  display: none;
-  justify-content: center;
-  align-items: center;
+  display: none; justify-content: center; align-items: center;
   z-index: 1000;
 }
-.modal-overlay.active {
-  display: flex;
-}
+.modal-overlay.active { display: flex; }
 .modal {
-  background: #f5f7fa;
-  border-radius: 12px;
-  padding: 24px;
-  width: 80%;
-  max-width: 800px;
-  max-height: 80%;
-  overflow-y: auto;
+  background: #f5f7fa; border-radius: 12px;
+  padding: 24px; width: 80%; max-width: 800px;
+  max-height: 80%; overflow-y: auto;
 }
 .modal header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 16px;
 }
 .close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer;
 }
 .providers-grid {
   display: grid;
@@ -176,17 +149,25 @@ body {
   gap: 12px;
 }
 .provider-item {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 12px;
-  text-align: center;
-  cursor: pointer;
+  border: 1px solid #ccc; border-radius: 8px;
+  padding: 12px; text-align: center; cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
 .provider-item.selected {
-  background: #e0e7ff;
-  border-color: #6366f1;
+  background: #e0e7ff; border-color: #6366f1;
 }
-.provider-item img {
-  max-height: 32px;
+.provider-item img { max-height: 32px; }
+
+/* 10) Info modal styles */
+.info-content {
+  max-height: 60vh; overflow-y: auto; line-height: 1.4;
+}
+.info-content h4 {
+  margin: 1em 0 0.4em;
+  color: var(--color-border-core);
+}
+.info-content p {
+  margin: 0.2em 0 1em;
+  background: #fff; color: #222;
+  padding: 0.6em 1em; border-radius: 4px;
 }

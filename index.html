@@ -12,7 +12,6 @@
   <div id="app" class="layout-grid">
     <aside id="sidebar-left" class="sidebar"></aside>
 
-    <!-- Center panels wrapped in the “backbone” style -->
     <div class="center-area">
       <div class="core-wrapper">
         <div id="categories" class="categories"></div>
@@ -22,7 +21,7 @@
     <aside id="sidebar-right" class="sidebar"></aside>
   </div>
 
-  <!-- Modal for selecting third‐party providers -->
+  <!-- Providers‐selection modal -->
   <div id="modal-overlay" class="modal-overlay">
     <div class="modal">
       <header>
@@ -30,6 +29,17 @@
         <button id="modal-close" class="close-button">&times;</button>
       </header>
       <div id="providers-grid" class="providers-grid"></div>
+    </div>
+  </div>
+
+  <!-- Info modal -->
+  <div id="info-overlay" class="modal-overlay">
+    <div class="modal">
+      <header>
+        <h3 id="info-modal-title"></h3>
+        <button id="info-modal-close" class="close-button">&times;</button>
+      </header>
+      <div id="info-modal-content" class="info-content"></div>
     </div>
   </div>
 

@@ -1,5 +1,4 @@
 // js/assets.js
-
 export const icons = {
   // Core modules
   catalog:             "assets/icons/catalog.svg",

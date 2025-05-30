@@ -57,22 +57,12 @@ export const modules = [
   { id: "storefrontPlatform", title: "Storefront Platform",icon: icons.storefrontPlatform,enabled: true },
   { id: "apis",               title: "APIs",               icon: icons.apis,               enabled: true },
   { id: "masterdataMgmt",     title: "Masterdata Mgmt.",    icon: icons.masterdataMgmt,     enabled: true },
-  { id: "ioAppPlatform",      title: "Intershop IO App Platform",icon: icons.ioAppPlatform, enabled: true },
-  {
-    id:        "intershopDataPipeline",
-    title:     labels.sidebars.right[1],
-    icon:      icons.intershopDataPipeline,
-    enabled:   true
-  },
-  {
-    id:        "intershopShield",
-    title:     labels.sidebars.right[2],
-    icon:      icons.intershopShield,
-    enabled:   true
-  },
-  { id: "pickAndPack",      title: labels.sidebars.right[0], icon: icons.pickAndPack,   enabled: true },
-  { id: "weni",             title: labels.sidebars.right[3], icon: icons.weni,          enabled: true },
-  { id: "otherChannels",    title: labels.sidebars.right[4], icon: icons.otherChannels, enabled: true }
+  { id: "ioAppPlatform",      title: "Intershop IO App Platform",icon: icons.ioAppPlatform,enabled: true },
+  { id: "pickAndPack",        title: labels.sidebars.right[0], icon: icons.pickAndPack,    enabled: true },
+  { id: "intershopDataPipeline",title: labels.sidebars.right[1], icon: icons.intershopDataPipeline,enabled: true },
+  { id: "intershopShield",    title: labels.sidebars.right[2], icon: icons.intershopShield,  enabled: true },
+  { id: "weni",               title: labels.sidebars.right[3], icon: icons.weni,             enabled: true },
+  { id: "otherChannels",      title: labels.sidebars.right[4], icon: icons.otherChannels,    enabled: true }
 ];
 
 export const layout = {

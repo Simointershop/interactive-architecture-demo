@@ -1,10 +1,10 @@
 // js/vars.js
 
 export const labels = {
-  pageTitle: "Interactive Architecture Demo",
+  pageTitle: "Intershop Interactive Architecture Demo",
   sidebars: {
     left:  ["Payment Gateway", "Carriers"],
-    right: ["Pick and Pack", "VTEX Data Pipeline", "VTEX Shield", "Weni", "Other Channels"]
+    right: ["Pick and Pack", "Intershop Data Pipeline", "Intershop Shield", "Weni", "Other Channels"]
   },
   categories: {
     "digital-commerce":             "Digital Commerce",
@@ -22,5 +22,5 @@ export const labels = {
 
 export const theme = {
   core:  "#e8155f",
-  addon: "#4a5f7a"
+  addon: "#3c4a68"
 };

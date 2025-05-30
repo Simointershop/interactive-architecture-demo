@@ -1,4 +1,17 @@
-/* === Layout === */
+/* 1) Global page & typography */
+body {
+  margin: 0;
+  background: var(--color-bg-page);
+  color: var(--color-text-light);
+  font-family: "Inter", sans-serif;
+}
+.page-title {
+  padding: var(--grid-gap);
+  margin: 0;
+  color: var(--color-text-light);
+}
+
+/* 2) Layout grid: sidebar – center – sidebar */
 .layout-grid {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
@@ -11,7 +24,21 @@
   gap: 12px;
 }
 
-/* Center panels grid */
+/* 3) Center area & outer “backbone” wrapper */
+.center-area {
+  display: flex;
+  justify-content: center;
+}
+.core-wrapper {
+  position: relative;
+  width: 100%;
+  background: var(--color-bg-wrapper);
+  border: 3px solid var(--color-border-core);
+  border-radius: 16px;
+  padding: var(--grid-gap);
+}
+
+/* 4) Inner categories grid */
 .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -22,17 +49,29 @@
   gap: var(--grid-gap);
 }
 
-/* Panel styling */
+/* 5) Panel styling with diagonal sheen */
 .category {
-  border: 2px solid;
+  position: relative;
+  background: var(--color-bg-panel);
   border-radius: 12px;
-  background: rgba(255,255,255,0.05);
   padding: 16px;
+  overflow: hidden;
 }
-.category.core  { border-color: var(--color-core-border);  }
-.category.addon { border-color: var(--color-addon-border); }
+.category::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-panel-sheen) 0%,
+    transparent 100%
+  );
+  mix-blend-mode: overlay;
+}
+.category.core  { border: 2px solid var(--color-border-core);  }
+.category.addon { border: 2px solid var(--color-border-addon); }
 
-/* Place panels */
+/* Panel grid‐area assignments */
 .category.digital-commerce             { grid-area: digital-commerce; }
 .category.b2b-commerce                 { grid-area: b2b-commerce; }
 .category.experience-management        { grid-area: experience-management; }
@@ -43,51 +82,61 @@
 .category.pick-and-pack                { grid-area: pick-and-pack; }
 .category.other-channels               { grid-area: other-channels; }
 
-/* Panel header */
+/* 6) Panel headers */
 .category > header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
+.category > header h3 {
+  margin: 0;
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+.category > header .info {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  cursor: default;
+}
 
-/* Modules grid inside each panel */
+/* 7) Modules grid inside panels */
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 8px;
+  gap: 12px;
 }
 
-/* === Module cards === */
+/* 8) Module cards */
 .module-card {
-  background-color: var(--module-bg-active);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: var(--color-module-active);
+  color: var(--color-text-light);
   border-radius: 8px;
-  padding: 12px;
+  padding: 14px;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
-  color: #fff;                  /* white text on active */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.2s, box-shadow 0.2s;
 }
 .module-card.disabled {
-  background-color: var(--module-bg-inactive);
-}
-.module-card.disabled h4 {
-  opacity: 0.8;
-}
-.module-card.disabled img {
-  filter: brightness(0.7) saturate(0);
+  background: var(--color-module-inactive);
 }
 .module-card img {
+  max-height: 32px;
+  margin-bottom: 6px;
   filter: brightness(1) saturate(1);
-  transition: filter 0.2s ease;
+  transition: filter 0.2s;
+}
+.module-card.disabled img {
+  filter: brightness(0.6) saturate(0);
 }
 .module-card h4 {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
 
-/* === Modal === */
+/* 9) Modal styles */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -108,7 +157,6 @@
   max-width: 800px;
   max-height: 80%;
   overflow-y: auto;
-  position: relative;
 }
 .modal header {
   display: flex;

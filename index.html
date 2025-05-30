@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Interactive Architecture Demo</title>
+  <title>Intershop Interactive Architecture Demo</title>
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <h1>Interactive Architecture Demo</h1>
+  <h1 class="page-title">Intershop Interactive Architecture Demo</h1>
 
   <div id="app" class="layout-grid">
     <aside id="sidebar-left" class="sidebar"></aside>
-    <div id="categories" class="categories"></div>
+
+    <!-- Center panels wrapped in the “backbone” style -->
+    <div class="center-area">
+      <div class="core-wrapper">
+        <div id="categories" class="categories"></div>
+      </div>
+    </div>
+
     <aside id="sidebar-right" class="sidebar"></aside>
   </div>
 
-  <!-- Modal for provider selection -->
+  <!-- Modal for selecting third‐party providers -->
   <div id="modal-overlay" class="modal-overlay">
     <div class="modal">
       <header>

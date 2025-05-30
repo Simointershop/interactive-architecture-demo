@@ -1,7 +1,21 @@
 :root {
-  --color-core-border:    #e8155f;
-  --color-addon-border:   #4a5f7a;
-  --grid-gap:             20px;
-  --module-bg-active:   #e8155f;   /* bright pink */
-  --module-bg-inactive: #1f2937;   /* dark slate */
+  /* Page & panels */
+  --color-bg-page:          #0b152a;
+  --color-bg-wrapper:       rgba(255,255,255,0.05);
+  --color-bg-panel:         rgba(255,255,255,0.03);
+  --color-panel-sheen:      rgba(255,255,255,0.07);
+
+  /* Borders */
+  --color-border-core:      #e8155f;
+  --color-border-addon:     #3c4a68;
+
+  /* Module cards */
+  --color-module-active:    #e8155f;
+  --color-module-inactive:  #19233b;
+
+  /* Text */
+  --color-text-light:       #ffffff;
+
+  /* Spacing */
+  --grid-gap:               20px;
 }

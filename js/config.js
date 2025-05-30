@@ -27,7 +27,6 @@ export const modules = [
     ],
     enabled: true
   },
-  // all the rest of your modules as simple toggles:
   { id: "catalog",            title: "Catalog",            icon: icons.catalog,            enabled: true },
   { id: "pricing",            title: "Pricing",            icon: icons.pricing,            enabled: true },
   { id: "checkout",           title: "Checkout",           icon: icons.checkout,           enabled: true },
@@ -58,16 +57,26 @@ export const modules = [
   { id: "storefrontPlatform", title: "Storefront Platform",icon: icons.storefrontPlatform,enabled: true },
   { id: "apis",               title: "APIs",               icon: icons.apis,               enabled: true },
   { id: "masterdataMgmt",     title: "Masterdata Mgmt.",    icon: icons.masterdataMgmt,     enabled: true },
-  { id: "ioAppPlatform",      title: "VTEX IO App Platform",icon: icons.ioAppPlatform,     enabled: true },
-  { id: "pickAndPack",        title: labels.sidebars.right[0], icon: icons.pickAndPack,        enabled: true },
-  { id: "vtexDataPipeline",   title: labels.sidebars.right[1], icon: icons.vtexDataPipeline,   enabled: true },
-  { id: "vtexShield",         title: labels.sidebars.right[2], icon: icons.vtexShield,         enabled: true },
-  { id: "weni",               title: labels.sidebars.right[3], icon: icons.weni,               enabled: true },
-  { id: "otherChannels",      title: labels.sidebars.right[4], icon: icons.otherChannels,      enabled: true }
+  { id: "ioAppPlatform",      title: "Intershop IO App Platform",icon: icons.ioAppPlatform, enabled: true },
+  {
+    id:        "intershopDataPipeline",
+    title:     labels.sidebars.right[1],
+    icon:      icons.intershopDataPipeline,
+    enabled:   true
+  },
+  {
+    id:        "intershopShield",
+    title:     labels.sidebars.right[2],
+    icon:      icons.intershopShield,
+    enabled:   true
+  },
+  { id: "pickAndPack",      title: labels.sidebars.right[0], icon: icons.pickAndPack,   enabled: true },
+  { id: "weni",             title: labels.sidebars.right[3], icon: icons.weni,          enabled: true },
+  { id: "otherChannels",    title: labels.sidebars.right[4], icon: icons.otherChannels, enabled: true }
 ];
 
 export const layout = {
-  left:    ["paymentGateway","carriers"],
+  left: ["paymentGateway","carriers"],
   categories: [
     {
       id:      "digital-commerce",
@@ -105,5 +114,5 @@ export const layout = {
       modules: ["storefrontPlatform","apis","masterdataMgmt","ioAppPlatform"]
     }
   ],
-  right: ["pickAndPack","vtexDataPipeline","vtexShield","weni","otherChannels"]
+  right: ["pickAndPack","intershopDataPipeline","intershopShield","weni","otherChannels"]
 };
